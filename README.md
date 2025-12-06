@@ -2,8 +2,6 @@
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)
 ![Jupyter Notebook](https://img.shields.io/badge/Tools-Google_Colab-orange?style=for-the-badge&logo=googlecolab&logoColor=white)
-![Scikit-Learn](https://img.shields.io/badge/Library-Scikit_Learn-yellow?style=for-the-badge&logo=scikit-learn&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/Deep_Learning-TensorFlow-ff6f00?style=for-the-badge&logo=tensorflow&logoColor=white)
 
 ## 👤 Student Identification
 > This repository is submitted as part of the Machine Learning & Deep Learning coursework.
