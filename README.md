@@ -165,5 +165,5 @@ The `UTS` folder contains **three main end-to-end projects** based on the offici
 
 1. **Clone or Download the Repository**
    ```bash
-   git clone https://github.com/<your-username>/<your-repo-name>.git
-   cd <your-repo-name>
+   git clone https://github.com/owenlaban/Machine-Learning.git
+   cd Machine-Learning
