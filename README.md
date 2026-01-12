@@ -1,4 +1,4 @@
-# Machine Learning Coursework & UTS – Owen
+# Machine Learning Coursework, UTS & UAS – Owen
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)
 ![Jupyter Notebook](https://img.shields.io/badge/Tools-Google_Colab-orange?style=for-the-badge&logo=googlecolab&logoColor=white)
@@ -26,6 +26,12 @@ It is organized to show my progress from basic data processing to building compl
    * Using appropriate metrics (MSE, RMSE, R², AUC, F1-score, Silhouette, etc.).
    * Visualizing model performance and feature importance.
 
+The repository contains:
+
+- **Weekly Assignments** – small, focused exercises.  
+- **UTS Projects** – 3 end-to-end midterm projects.  
+- **UAS Tasks** – 3 final exam notebooks (`Task 1.ipynb`, `Task 2.ipynb`, `Task 3.ipynb`) that consolidate and refine the UTS work.
+
 ---
 
 ## 📚 Weekly Assignments
@@ -49,13 +55,13 @@ The `Weekly_Assignments` folder (or equivalent) summarizes my step-by-step learn
 
 ---
 
-## 📂 UTS – End-to-End Projects
+## 📂 UTS – End-to-End Midterm Projects
 
 The `UTS` folder contains **three main end-to-end projects** based on the official mid-term instructions.
 
 ### 1. 🕵️‍♂️ End-To-End Fraud Detection (Classification)
 
-* **File:** `UTS_Fraud_Detection.ipynb`  
+* **File (UTS):** `UTS_Fraud_Detection.ipynb`  
 * **Dataset:** `train_transaction.csv`, `test_transaction.csv` (with `isFraud` label in train).  
 * **Objective:**  
   Build a classifier that predicts the probability that a transaction is fraudulent (`isFraud = 1`), while handling **class imbalance**.
@@ -94,7 +100,7 @@ The `UTS` folder contains **three main end-to-end projects** based on the offici
 
 ### 2. 📈 End-To-End Regression Pipeline (Song Year Prediction)
 
-* **File:** `UTS_Regression_Pipeline.ipynb`  
+* **File (UTS):** `UTS_Regression_Pipeline.ipynb`  
 * **Dataset:** `midterm-regresi-dataset.csv` (first column = target year, remaining columns = audio features).  
 * **Objective:**  
   Predict the **release year** of a song based on its numerical audio features.
@@ -130,7 +136,7 @@ The `UTS` folder contains **three main end-to-end projects** based on the offici
 
 ### 3. 👥 Customer Clustering with Autoencoder (Unsupervised)
 
-* **File:** `UTS_Customer_Clustering.ipynb`  
+* **File (UTS):** `UTS_Customer_Clustering.ipynb`  
 * **Dataset:** `clusteringmidterm.csv` (credit card usage & payment behavior).  
 * **Objective:**  
   Segment customers into groups based on their transaction behavior, using a combination of **Autoencoder** and **K-Means Clustering**.
@@ -156,6 +162,77 @@ The `UTS` folder contains **three main end-to-end projects** based on the offici
 - **Analysis**
   - Compute mean statistics per cluster (average balance, purchase frequency, cash advance, etc.).
   - Interpret business meaning of each cluster (e.g., “high spender”, “cash advance heavy user”, “low usage customer”).
+
+---
+
+## 🧪 UAS – Final Exam Tasks
+
+The **UAS** part of the course is implemented in **three consolidated notebooks**:
+
+- `Task 1.ipynb`  
+- `Task 2.ipynb`  
+- `Task 3.ipynb`  
+
+These notebooks reuse the same three themes as UTS (classification, regression, clustering) but are written in a more compact, RAM-efficient, and deployment-oriented style suitable for Google Colab (12 GB RAM).
+
+### 🔹 UAS – Task 1: Extreme-Light Fraud Detection (Classification)
+
+* **File (UAS):** `Task 1.ipynb`  
+* **Dataset:** `train_transaction.csv`, `test_transaction.csv`.  
+* **Focus:** Build a **lightweight fraud detection pipeline** that can run reliably in Colab with limited RAM.
+
+**Highlights**
+
+- Heavy use of:
+  - **Row sampling** (limit number of training rows).
+  - **Numeric-only subset** of features.
+  - `StandardScaler` with `float32` casting.
+- Models:
+  - **Logistic Regression** and **Random Forest** as compact baselines.
+  - Optional **ANN (MLP)** with small hidden layers.
+- Metrics and outputs:
+  - ROC-AUC, confusion matrix, classification report.
+  - Final `submission_fraud_extreme_small_*.csv` file for deployment.
+
+---
+
+### 🔹 UAS – Task 2: Regression on Audio Features
+
+* **File (UAS):** `Task 2.ipynb`  
+* **Dataset:** `midterm-regresi-dataset.csv`.  
+* **Focus:** Implement a **clean, end-to-end regression pipeline** under memory constraints.
+
+**Highlights**
+
+- Treat the first column as the `year` target, others as `feature_1..N`.
+- Use `StandardScaler` and (optionally) sampling to control memory usage.
+- Models:
+  - Baseline (mean year),
+  - **Linear Regression**,
+  - **Ridge Regression** (several alphas),
+  - **Random Forest Regressor** with moderate size,
+  - Optional small **MLP regressor**.
+- Evaluate using **MSE, RMSE, MAE, R²** and compare models in a single summary table.
+
+---
+
+### 🔹 UAS – Task 3: Customer Clustering & Autoencoder Refinement
+
+* **File (UAS):** `Task 3.ipynb`  
+* **Dataset:** `clusteringmidterm.csv`.  
+* **Focus:** Build a **compact customer clustering notebook** that refines the UTS work.
+
+**Highlights**
+
+- Standardize features, remove `CUST_ID`, and convert to `float32`.
+- Train a small **Autoencoder** to obtain latent features.
+- Run **K-Means** on both:
+  - the original scaled features, and
+  - the autoencoder latent space.
+- Compare:
+  - **Silhouette Score** and other cluster metrics,
+  - Cluster size distribution and average behavior per cluster.
+- Summarize business interpretation of each segment.
 
 ---
 
